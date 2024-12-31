@@ -1,0 +1,14 @@
+{
+  "extends": "@tomjs/tsconfig/node.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./extension",
+    "baseUrl": "./extension",
+    "tsBuildInfoFile": "obj/tsconfig.webview.tsbuildinfo",
+    "paths": {
+      "@e/*": ["./*"]
+    },
+    "types": ["node", "@tomjs/vite-plugin-vscode/env"]
+  },
+  "include": ["./extension/**/*.ts", "./extension/**/*.d.ts"]
+}

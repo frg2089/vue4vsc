@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk">
+  <PropertyGroup>
+    <ShouldRunNpmInstall>false</ShouldRunNpmInstall>
+    <BuildOutputFolder>dist</BuildOutputFolder>
+    <RestoreCommand>pnpm install</RestoreCommand>
+    <BuildCommand>pnpm build</BuildCommand>
+    <StartupCommand>pnpm dev</StartupCommand>
+    <TestCommand>pnpm test</TestCommand>
+    <CleanCommand>pnpm clean</CleanCommand>
+    <PublishCommand>pnpm publish</PublishCommand>
+  </PropertyGroup>
+
+  <Target Name="Pack">
+  </Target>
+
+  <Target Name="PnpmRestore" BeforeTargets="Restore" Inputs="$(MSBuildThisDirectory)package.json" Outputs="$(MSBuildThisDirectory)pnpm-lock.yaml">
+    <Exec Command="$(RestoreCommand)" UseUtf8Encoding="true" />
+  </Target>
+</Project>

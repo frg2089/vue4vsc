@@ -1,0 +1,21 @@
+{
+  "extends": "@tomjs/tsconfig/vue.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "tsBuildInfoFile": "obj/tsconfig.webview.tsbuildinfo",
+    "types": [
+      "vite/client",
+      "unplugin-vue-router/client",
+      "@types/vscode-webview"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "obj/*.d.ts"
+  ]
+}
